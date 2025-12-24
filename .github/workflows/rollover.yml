@@ -3,7 +3,7 @@ name: Daily Task Rollover
 on:
   schedule:
     # Runs at 8:00 PM UTC daily (adjust timezone as needed)
-    - cron: '0 20 * * *'
+    - cron: '0 15 35 * *'
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
