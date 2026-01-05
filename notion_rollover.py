@@ -117,7 +117,7 @@ def rollover_tasks():
     print(f"Running rollover at {datetime.now()}")
     
     # Get today's date
-    today = datetime.now().date().isoformat()
+    tomorrow = (datetime.now() + timedelta(days=1)).date().isoformat()
     
     # Find overdue tasks
     overdue_tasks = get_overdue_tasks()
@@ -145,9 +145,9 @@ def rollover_tasks():
         
         print(f"[{i}/{len(tasks_to_process)}] Rolling over: {task_name}")
         
-        if update_task_date(page_id, today):
+        if update_task_date(page_id, tomorrow):
             updated_count += 1
-            print(f"  ✓ Updated to {today}")
+            print(f"  ✓ Updated to {tomorrow}")
         else:
             failed_count += 1
             print(f"  ✗ Failed to update")
