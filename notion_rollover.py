@@ -52,7 +52,7 @@ def get_overdue_tasks():
                 {
                     "property": "Due Date",
                     "date": {
-                        "before": today
+                        "on_or_before": today
                     }
                 }
             ]
